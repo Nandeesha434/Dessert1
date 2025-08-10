@@ -1,0 +1,76 @@
+h1 {
+    text-align: center;
+    color: brown;
+    background-color:rgb(242, 250, 234);
+    font-size: 3rem; /* Increase main heading size */
+}
+body {
+    background-color: #c9f3ef; /* Light gray background for better contrast */
+    font-family: Arial, sans-serif; /* Use a clean, modern font */
+}
+h2 {
+    font-size: 2.2rem; /* Increase this value as needed */
+    font-weight: bold;
+    text-align: center;
+}
+h3 {
+    font-size: 1.8rem; /* Increase Ingredients subheading size */
+    color: #b5b5e7;
+    color: rgb(83, 150, 66);  /* Optional: make it stand out */
+    margin-bottom: 8px; /* Reduce space below Ingredients */
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 50px;
+}
+
+.image-row img {
+    width: 170px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px; /* Adds rounded corners to images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+}
+section {
+    max-width: 1070px;      /* Limit the width of the yellow section */
+    margin: 40px auto;     /* Center and reduce top/bottom space */
+    text-align: center;
+    padding: 30px 20px;    /* Add some padding for content */
+    border-radius: 16px;
+    background-color: rgb(231, 227, 245);
+}
+section ul {
+    margin-top: 0;      /* Remove space above the list */
+    margin-bottom: 10px;
+    list-style-position: inside;
+    padding-left: 0;
+    text-align: left;
+    display: inline-block; /* Centers the whole list block */
+}
+
+section {
+    text-align: center; /* Centers the list block itself */
+}
+section ul li {
+    margin: 5px 0; /* Adds space between list items */
+    font-size: 1.2rem; /* Increases font size for better readability */
+}
+
+.dessert-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dessert-name {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #6b3d3d;
+}
+
+
+
