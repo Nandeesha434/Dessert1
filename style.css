@@ -24,7 +24,7 @@ h3 {
     display: flex;
     justify-content: center;
     gap: 100px;
-    margin: 50px;
+    margin: 50px;   
 }
 
 .image-row img {
