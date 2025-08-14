@@ -1,7 +1,7 @@
 h1 {
     text-align: center;
-    color: brown;
-    background-color:rgb(242, 250, 234);
+    color: rgb(255, 6, 6);
+    background-color:rgb(252, 249, 249);
     font-size: 3rem; /* Increase main heading size */
 }
 body {
@@ -32,13 +32,12 @@ h3 {
     height: 190px;
     object-fit: cover;
     border-radius: 10px; /* Adds rounded corners to images */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
 }
 section {
     max-width: 1070px;      /* Limit the width of the yellow section */
-    margin: 40px auto;     /* Center and reduce top/bottom space */
+    margin: 35px auto;     /* Center and reduce top/bottom space */
     text-align: center;
-    padding: 30px 20px;    /* Add some padding for content */
+    padding: 30px 20px;    
     border-radius: 16px;
     background-color: rgb(231, 227, 245);
 }
