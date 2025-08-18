@@ -3,81 +3,371 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Pick Your Dessert!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            color: #2d3436;
+            line-height: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 19px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #6c5ce7;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #636e72;
+            font-style: italic;
+        }
+
+        /* Dessert Cards Grid */
+        .dessert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .dessert-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .dessert-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            border-color: #fd79a8;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .dessert-card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: #2d3436;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Dessert Sections */
+        .dessert-section {
+            margin: 80px 0;
+            padding: 40px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #6c5ce7;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #fd79a8;
+            padding-bottom: 15px;
+        }
+
+        .section-image {
+            width: 100%;
+            max-width: 500px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #636e72;
+            text-align: center;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .ingredients {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .ingredients h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .ingredients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            list-style: none;
+        }
+
+        .ingredients-list li {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .ingredients-list li:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dessert-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .card-title {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .dessert-section {
+                padding: 25px;
+            }
+
+            .ingredients-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
 <body>
-    <a id="top"></a>
-    <h1>Pick Your Desert</h1>
-    <div class="image-row">
-        <div class="dessert-item">
-            <a href="#desert1"><img src="https://imgs.search.brave.com/DxBXrlXNblegvB2bNlBCVWdbkZcFBDxYBwa_KqpsOOc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMud2lubmkuaW4v/cHJvZHVjdC9wcmlt/YXJ5LzIwMjMvMy84/MzIxOC5qcGVnP2Rw/cj0xJnc9NDAw" alt="Desert 1"></a>
-            <p class="dessert-name">Milky Dream</p>
+    <header>
+        <div class="container">
+            <h1>🍰Pick Your Dessert! </h1>
+            <p class="subtitle">Indulge in our heavenly collection of sweet treats</p>
         </div>
-        <div class="dessert-item">
-            <a href="#desert2"><img src="https://imgs.search.brave.com/8giAY725evsBbZ1HZKbUUkfHjy_L5RysZXXATuOhXRk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jaG93/cGF0dHlzd2VldHNh/bmRzbmFja3MuY29t/L2Nkbi9zaG9wL2Zp/bGVzLzkyNmM3MzZh/LWExN2YtNDkxMy05/ZTM4LTA1ZjdmNWQ4/YjQ4MC5qcGc_dj0x/NzQwMzQzODIyJndp/ZHRoPTQ4MA" alt="Desert 2"></a>
-            <p class="dessert-name">Gulab Jamun</p>
+    </header>
+
+    <main class="container">
+        <!-- Dessert Selection Cards -->
+        <div class="dessert-grid">
+            <div class="dessert-card" onclick="scrollToSection('cake')">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Delicious Chocolate Cake" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Cake</h2>
+                </div>
+            </div>
+
+            <div class="dessert-card" onclick="scrollToSection('gulab-jamun')">
+                <img src="https://imgs.search.brave.com/e1UnxWsE-ryllcGJ_nIOSTh6bN3wXq7sMtJvLHLMmok/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE0Lzk1LzY3LzU0/LzM2MF9GXzE0OTU2/NzU0NjFfaVJ6TktG/ancxWEp5bDNyTGhz/Vk1jOGd5ZGhYbEIx/UWguanBn" alt="Sweet Gulab Jamun" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Gulab Jamun</h2>
+                </div>
+            </div>
+
+            <div class="dessert-card" onclick="scrollToSection('ice-cream')">
+                <img src="https://imgs.search.brave.com/V1nFooZJAKmArJXE4bHMz9qYgVRe92ydPru6sM5Klco/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9uZWFw/b2xpdGFuLWljZS1j/cmVhbS0xNTc3OTE1/NS5qcGc" alt="Creamy Ice Cream" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Ice Cream</h2>
+                </div>
+            </div>
+
+            <div class="dessert-card" onclick="scrollToSection('Kalakhand')">
+                <img src="https://imgs.search.brave.com/zXg5SxeAdzckQ2Lm8XLg5fdNTJfRVOnn2GyM1jcP7qE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kYWR1/cy5jby5pbi9jZG4v/c2hvcC9maWxlcy81/XzAwYTU1MmY4LWYy/MzItNDJjYS1hMDJj/LTRiMDVhNTBjMDEy/Yi5wbmc_dj0xNzQy/MzExMTk5JndpZHRo/PTEyMDA" alt="Traditional KalaKhand" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">KalaKhand</h2>
+                </div>
+            </div>
         </div>
-        <div class="dessert-item">
-            <a href="#desert3"><img src="https://imgs.search.brave.com/V1nFooZJAKmArJXE4bHMz9qYgVRe92ydPru6sM5Klco/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9uZWFw/b2xpdGFuLWljZS1j/cmVhbS0xNTc3OTE1/NS5qcGc" alt="Desert 3"></a>
-            <p class="dessert-name">Choco Crunch</p>
+
+        <!-- Dessert Detail Sections -->
+        <section id="cake" class="dessert-section">
+            <h2 class="section-title">Decadent Chocolate Cake</h2>
+            <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Rich Chocolate Cake Slice" class="section-image">
+            <p class="description">
+                Indulge in our signature chocolate cake - a masterpiece of rich, moist layers infused with premium cocoa and topped with silky chocolate ganache. Each bite melts in your mouth, delivering pure chocolate bliss that will satisfy even the most discerning sweet tooth.
+            </p>
+            <div class="ingredients">
+                <h3>Premium Ingredients</h3>
+                <ul class="ingredients-list">
+                    <li>Belgian Dark Chocolate</li>
+                    <li>Farm-Fresh Eggs</li>
+                    <li>Pure Vanilla Extract</li>
+                    <li>Organic Flour</li>
+                    <li>Creamy Butter</li>
+                    <li>Rich Cocoa Powder</li>
+                    <li>Fresh Heavy Cream</li>
+                    <li>Cane Sugar</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="gulab-jamun" class="dessert-section">
+            <h2 class="section-title">Traditional Gulab Jamun</h2>
+            <img src="https://imgs.search.brave.com/897paOcsbu6yW35PxDmqYZyYDcwpr6z1biGw0nnHrL0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDY4/Mjc2ODMwL3Bob3Rv/L2d1bGFiLWphbXVu/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1kOGhvV1pjUUlv/Ui1kd1A0VVhfY1g3/N1BLZUExU3FCUk9J/cFFrd3Vhd1dZPQ" alt="Golden Gulab Jamun in Syrup" class="section-image">
+            <p class="description">
+                Experience the authentic taste of India with our traditional Gulab Jamun. These golden, spongy balls are made from the finest milk solids, fried to perfection, and soaked in aromatic cardamom-rose syrup. A timeless dessert that brings warmth and sweetness to every celebration.
+            </p>
+            <div class="ingredients">
+                <h3>Authentic Ingredients</h3>
+                <ul class="ingredients-list">
+                    <li>Fresh Khoya (Milk Solids)</li>
+                    <li>Pure Ghee</li>
+                    <li>Cardamom Powder</li>
+                    <li>Rose Water</li>
+                    <li>Sugar Syrup</li>
+                    <li>All-Purpose Flour</li>
+                    <li>Baking Powder</li>
+                    <li>Chopped Pistachios</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="ice-cream" class="dessert-section">
+            <h2 class="section-title">Artisan Ice Cream</h2>
+            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Scoops of Colorful Ice Cream" class="section-image">
+            <p class="description">
+                Cool down with our handcrafted artisan ice cream, made with the finest ingredients and churned to creamy perfection. Available in classic vanilla, rich chocolate, and seasonal fruit flavors. Each scoop is a frozen symphony of flavor that will transport you to dessert paradise.
+            </p>
+            <div class="ingredients">
+                <h3>Natural Ingredients</h3>
+                <ul class="ingredients-list">
+                    <li>Organic Heavy Cream</li>
+                    <li>Fresh Whole Milk</li>
+                    <li>Free-Range Egg Yolks</li>
+                    <li>Madagascar Vanilla</li>
+                    <li>Raw Honey</li>
+                    <li>Fresh Seasonal Fruits</li>
+                    <li>Premium Chocolate</li>
+                    <li>Natural Stabilizers</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section id="kalakhand" class="dessert-section">
+            <h2 class="section-title">Heavenly KalaKhand</h2>
+            <img src="https://imgs.search.brave.com/zXg5SxeAdzckQ2Lm8XLg5fdNTJfRVOnn2GyM1jcP7qE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kYWR1/cy5jby5pbi9jZG4v/c2hvcC9maWxlcy81/XzAwYTU1MmY4LWYy/MzItNDJjYS1hMDJj/LTRiMDVhNTBjMDEy/Yi5wbmc_dj0xNzQy/MzExMTk5JndpZHRo/PTEyMDA" class="section-image">
+            <p class="description">
+                Delight in our exquisite KalaKhand - soft, spongy cottage cheese dumplings floating in rich, cardamom-scented milk. This royal Bengali dessert is garnished with crushed pistachios and almonds, creating a luxurious treat that's both elegant and irresistibly delicious.
+            </p>
+            <div class="ingredients">
+                <h3>Royal Ingredients</h3>
+                <ul class="ingredients-list">
+                    <li>Fresh Paneer (Cottage Cheese)</li>
+                    <li>Full-Fat Milk</li>
+                    <li>Green Cardamom</li>
+                    <li>Saffron Strands</li>
+                    <li>Condensed Milk</li>
+                    <li>Crushed Pistachios</li>
+                    <li>Sliced Almonds</li>
+                    <li>Sugar</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Pick Your Dessert - Where Sweet Dreams Come True </p>
+            <p>Made with love and the finest ingredients</p>
         </div>
-        <div class="dessert-item">
-            <a href="#desert4"><img src="https://imgs.search.brave.com/vz8E9P6xdSGbwDZUqSD_hWZG7dEDThXBJts1vK_b9Fk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aGVk/ZXNpZm9vZC5jb20v/bWVkaWEvVmVsbGFu/a2klMjBGb29kcyUy/MC0lMjBLaXNtaXMl/MjBLYWxha2FuZCwl/MjAyNTAlMjBnLTEu/d2VicA" alt="Desert 4"></a>
-            <p class="dessert-name">Mysore Pak</p>
-        </div>
-    </div>
+    </footer>
 
-    <section id="desert1">
-        <h2>Desert 1: Milky Dream</h2>
-        <img src="https://imgs.search.brave.com/DxBXrlXNblegvB2bNlBCVWdbkZcFBDxYBwa_KqpsOOc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMud2lubmkuaW4v/cHJvZHVjdC9wcmlt/YXJ5LzIwMjMvMy84/MzIxOC5qcGVnP2Rw/cj0xJnc9NDAw" alt="Milky Dream" width="220">
-        <p>This dessert is as soft as a cloud and as sweet as your best dream! <br> It’s a favorite at midnight snack parties.</p>
-        <h3>Ingredients</h3>
-        <ul>
-            <li>Milk</li>
-            <li>Sugar</li>
-            <li>Vanilla</li>
-        </ul>
-        <br> <a href="#top">Back to Top</a>
-    </section>
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            element.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
 
-    <section id="desert2">
-        <h2>Desert 2: Berry Blast</h2>
-        <img src="https://imgs.search.brave.com/8giAY725evsBbZ1HZKbUUkfHjy_L5RysZXXATuOhXRk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jaG93/cGF0dHlzd2VldHNh/bmRzbmFja3MuY29t/L2Nkbi9zaG9wL2Zp/bGVzLzkyNmM3MzZh/LWExN2YtNDkxMy05/ZTM4LTA1ZjdmNWQ4/YjQ4MC5qcGc_dj0x/NzQwMzQzODIyJndp/ZHRoPTQ4MA" alt="Berry Blast" width="220">
-        <p>Berry Blast is bursting with color and flavor! <br> Did you know? Berries are nature’s candy and super healthy too.</p>
-        <h3>Ingredients</h3>
-        <ul>
-            <li>Strawberries</li>
-            <li>Blueberries</li>
-            <li>Cream</li>
-        </ul>
-       <br> <a href="#top">Back to Top</a>
-    </section>
-
-    <section id="desert3">
-        <h2>Desert 3: Choco Crunch</h2>
-        <img src="https://imgs.search.brave.com/V1nFooZJAKmArJXE4bHMz9qYgVRe92ydPru6sM5Klco/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9uZWFw/b2xpdGFuLWljZS1j/cmVhbS0xNTc3OTE1/NS5qcGc" alt="Choco Crunch" width="220">
-        <p>Choco Crunch is for the true chocolate lover! <br> Chocolate was once used as money in ancient times.</p>
-        <h3>Ingredients</h3>
-        <ul>
-            <li>Chocolate</li>
-            <li>Biscuits</li>
-            <li>Cream</li>
-        </ul>
-        <br> <a href="#top">Back to Top</a>
-    </section>
-
-    <section id="desert4">
-        <h2>Desert 4: Lemon Light</h2>
-        <img src="https://imgs.search.brave.com/vz8E9P6xdSGbwDZUqSD_hWZG7dEDThXBJts1vK_b9Fk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aGVk/ZXNpZm9vZC5jb20v/bWVkaWEvVmVsbGFu/a2klMjBGb29kcyUy/MC0lMjBLaXNtaXMl/MjBLYWxha2FuZCwl/MjAyNTAlMjBnLTEu/d2VicA" alt="Lemon Light" width="220">
-        <p>Lemon Light is zesty and refreshing! <br> Did you know? Lemons float, but limes sink!</p>
-        <h3>Ingredients</h3>
-        <ul>
-            <li>Lemon</li>
-            <li>Sugar</li>
-            <li>Egg Whites</li>
-        </ul>
-        <br> <a href="#top">Back to Top</a>
-    </section>
+        // For interactive sparkle effect on hover
+        document.querySelectorAll('.dessert-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.background = 'linear-gradient(135deg, #ffffff, #f8f9fa)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.background = 'white';
+            });
+        });
+    </script>
 </body>
 </html>

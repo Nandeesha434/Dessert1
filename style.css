@@ -1,70 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+    color: #2d3436;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 h1 {
     text-align: center;
-    color: rgb(255, 6, 6);
-    background-color:rgb(252, 249, 249);
-    font-size: 3rem; /* Increase main heading size */
-}
-body {
-    background-color: #c9f3ef; /* Light gray background for better contrast */
-    font-family: Arial, sans-serif; /* Use a clean, modern font */
-}
-h2 {
-    font-size: 2.2rem; /* Increase this value as needed */
-    font-weight: bold;
-    text-align: center;
-}
-h3 {
-    font-size: 1.8rem; /* Increase Ingredients subheading size */
-    color: #b5b5e7;
-    margin-bottom: 8px; /* Reduce space below Ingredients */
-}
-
-.image-row {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    margin: 50px;   
-}
-
-.image-row img {
-    width: 170px;
-    height: 190px;
-    object-fit: cover;
-    border-radius: 10px; /* Adds rounded corners to images */
-}
-section {
-    max-width: 1070px;      /* Limit the width of the yellow section */
-    margin: 35px auto;     /* Center and reduce top/bottom space */
-    text-align: center;
-    padding: 30px 20px;    
-    border-radius: 16px;
-    background-color: rgb(231, 227, 245);
-}
-section ul {
-    margin-top: 0;      /* Remove space above the list */
+    font-size: 3rem;
+    color: #6c5ce7;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
-    list-style-position: inside;
-    padding-left: 0;
+}
+
+.subtitle {
     text-align: center;
-    display: inline-block; /* Centers the whole list block */
-}
-section ul li {
-    margin: 5px 0; /* Adds space between list items */
-    font-size: 1.2rem; /* Increases font size for better readability */
-}
-
-.dessert-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.dessert-name {
-    margin-top: 10px;
     font-size: 1.2rem;
-    font-weight: bold;
-    color: #6b3d3d;
+    color: #636e72;
+    font-style: italic;
 }
 
+/* Dessert Cards Grid */
+.dessert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 50px 0;
+}
 
+.dessert-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
 
+.dessert-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    border-color: #fd79a8;
+}
+
+.card-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.dessert-card:hover .card-image {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-title {
+    font-size: 2rem;
+    color: #2d3436;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Dessert Sections */
+.dessert-section {
+    margin: 80px 0;
+    padding: 40px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #6c5ce7;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #fd79a8;
+    padding-bottom: 15px;
+}
+
+.section-image {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #636e72;
+    text-align: center;
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+.ingredients {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 25px 0;
+}
+
+.ingredients h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.ingredients-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    list-style: none;
+}
+
+.ingredients-list li {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.ingredients-list li:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dessert-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .dessert-section {
+        padding: 25px;
+    }
+
+    .ingredients-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Footer */
+footer {
+    background: #2d3436;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 1.1rem;
+}
