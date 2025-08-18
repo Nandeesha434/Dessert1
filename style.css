@@ -16,7 +16,6 @@ h2 {
 h3 {
     font-size: 1.8rem; /* Increase Ingredients subheading size */
     color: #b5b5e7;
-    color: rgb(83, 150, 66);  /* Optional: make it stand out */
     margin-bottom: 8px; /* Reduce space below Ingredients */
 }
 
