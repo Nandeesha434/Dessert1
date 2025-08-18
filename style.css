@@ -46,12 +46,8 @@ section ul {
     margin-bottom: 10px;
     list-style-position: inside;
     padding-left: 0;
-    text-align: left;
+    text-align: center;
     display: inline-block; /* Centers the whole list block */
-}
-
-section {
-    text-align: center; /* Centers the list block itself */
 }
 section ul li {
     margin: 5px 0; /* Adds space between list items */
