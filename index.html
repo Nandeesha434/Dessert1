@@ -3,163 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pick Your Dessert!</title>
+    <title>Sweet Haven Bakery - Artisan Desserts & Fresh Baked Goods</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <h1>Pick Your Dessert! </h1>
-            <p class="subtitle">Indulge in our heavenly collection of sweet treats</p>
+            <div class="nav-brand">
+                <h2>Sweet Haven</h2>
+                <span class="tagline">Artisan Bakery</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#specialties">Specialties</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Handcrafted Desserts Made with Love</h1>
+                <p class="hero-subtitle">Experience the finest artisan desserts, baked fresh daily using traditional recipes and premium ingredients</p>
+                <div class="hero-badges">
+                    <span class="badge">Est. 1995</span>
+                    <span class="badge">Fresh Daily</span>
+                    <span class="badge">Award Winning</span>
+                </div>
+            </div>
         </div>
     </header>
 
     <main class="container">
+        <!-- Specialties Section -->
+        <section id="specialties" class="specialties-intro">
+            <div class="section-header">
+                <h2>Our Signature Specialties</h2>
+                <p>Discover our most beloved creations, each crafted with passion and the finest ingredients</p>
+            </div>
+        </section>
+
         <!-- Dessert Selection Cards -->
         <div class="dessert-grid">
-            <div class="dessert-card" onclick="scrollToSection('cake')">
-                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Delicious Chocolate Cake" class="card-image">
+            <div class="dessert-card">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Decadent Chocolate Cake" class="card-image">
+                    <div class="card-overlay">
+                        <span class="price">$28.50</span>
+                    </div>
+                </div>
                 <div class="card-content">
-                    <h2 class="card-title">Cake</h2>
+                    <h3 class="card-title">Decadent Chocolate Cake</h3>
+                    <p class="card-description">Rich Belgian chocolate layers with silky ganache</p>
+                    <div class="card-meta">
+                        <span class="serving">Serves 8-10</span>
+                        <span class="prep-time">24hr notice</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="dessert-card" onclick="scrollToSection('gulab-jamun')">
-                <img src="https://imgs.search.brave.com/e1UnxWsE-ryllcGJ_nIOSTh6bN3wXq7sMtJvLHLMmok/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE0Lzk1LzY3LzU0/LzM2MF9GXzE0OTU2/NzU0NjFfaVJ6TktG/ancxWEp5bDNyTGhz/Vk1jOGd5ZGhYbEIx/UWguanBn" alt="Sweet Gulab Jamun" class="card-image">
+            <div class="dessert-card">
+                <div class="card-image-wrapper">
+                    <img src="https://imgs.search.brave.com/e1UnxWsE-ryllcGJ_nIOSTh6bN3wXq7sMtJvLHLMmok/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE0Lzk1LzY3LzU0/LzM2MF9GXzE0OTU2/NzU0NjFfaVJ6TktG/ancxWEp5bDNyTGhz/Vk1jOGd5ZGhYbEIx/UWguanBn" alt="Traditional Gulab Jamun" class="card-image">
+                    <div class="card-overlay">
+                        <span class="price">$12.99</span>
+                    </div>
+                </div>
                 <div class="card-content">
-                    <h2 class="card-title">Gulab Jamun</h2>
+                    <h3 class="card-title">Traditional Gulab Jamun</h3>
+                    <p class="card-description">Golden milk dumplings in cardamom rose syrup</p>
+                    <div class="card-meta">
+                        <span class="serving">12 pieces</span>
+                        <span class="prep-time">Fresh daily</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="dessert-card" onclick="scrollToSection('ice-cream')">
-                <img src="https://imgs.search.brave.com/V1nFooZJAKmArJXE4bHMz9qYgVRe92ydPru6sM5Klco/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9uZWFw/b2xpdGFuLWljZS1j/cmVhbS0xNTc3OTE1/NS5qcGc" alt="Creamy Ice Cream" class="card-image">
+            <div class="dessert-card">
+                <div class="card-image-wrapper">
+                    <img src="https://imgs.search.brave.com/V1nFooZJAKmArJXE4bHMz9qYgVRe92ydPru6sM5Klco/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9uZWFw/b2xpdGFuLWljZS1j/cmVhbS0xNTc3OTE1/NS5qcGc" alt="Artisan Gelato" class="card-image">
+                    <div class="card-overlay">
+                        <span class="price">$6.50</span>
+                    </div>
+                </div>
                 <div class="card-content">
-                    <h2 class="card-title">Ice Cream</h2>
+                    <h3 class="card-title">Artisan Gelato</h3>
+                    <p class="card-description">Small-batch gelato made with organic ingredients</p>
+                    <div class="card-meta">
+                        <span class="serving">Per scoop</span>
+                        <span class="prep-time">8 flavors</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="dessert-card" onclick="scrollToSection('Kalakhand')">
-                <img src="https://imgs.search.brave.com/zXg5SxeAdzckQ2Lm8XLg5fdNTJfRVOnn2GyM1jcP7qE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kYWR1/cy5jby5pbi9jZG4v/c2hvcC9maWxlcy81/XzAwYTU1MmY4LWYy/MzItNDJjYS1hMDJj/LTRiMDVhNTBjMDEy/Yi5wbmc_dj0xNzQy/MzExMTk5JndpZHRo/PTEyMDA" alt="Traditional KalaKhand" class="card-image">
+            <div class="dessert-card">
+                <div class="card-image-wrapper">
+                    <img src="https://imgs.search.brave.com/zXg5SxeAdzckQ2Lm8XLg5fdNTJfRVOnn2GyM1jcP7qE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kYWR1/cy5jby5pbi9jZG4v/c2hvcC9maWxlcy81/XzAwYTU1MmY4LWYy/MzItNDJjYS1hMDJj/LTRiMDVhNTBjMDEy/Yi5wbmc_dj0xNzQy/MzExMTk5JndpZHRo/PTEyMDA" alt="Royal Kalakand" class="card-image">
+                    <div class="card-overlay">
+                        <span class="price">$15.75</span>
+                    </div>
+                </div>
                 <div class="card-content">
-                    <h2 class="card-title">KalaKhand</h2>
+                    <h3 class="card-title">Royal Kalakand</h3>
+                    <p class="card-description">Premium milk fudge with saffron and pistachios</p>
+                    <div class="card-meta">
+                        <span class="serving">1 lb box</span>
+                        <span class="prep-time">Same day</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Dessert Detail Sections -->
-        <section id="cake" class="dessert-section">
-            <h2 class="section-title">Decadent Chocolate Cake</h2>
-            <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Rich Chocolate Cake Slice" class="section-image">
-            <p class="description">
-                Indulge in our signature chocolate cake - a masterpiece of rich, moist layers infused with premium cocoa and topped with silky chocolate ganache. Each bite melts in your mouth, delivering pure chocolate bliss that will satisfy even the most discerning sweet tooth.
-            </p>
-            <div class="ingredients">
-                <h3>Premium Ingredients</h3>
-                <ul class="ingredients-list">
-                    <li>Belgian Dark Chocolate</li>
-                    <li>Farm-Fresh Eggs</li>
-                    <li>Pure Vanilla Extract</li>
-                    <li>Organic Flour</li>
-                    <li>Creamy Butter</li>
-                    <li>Rich Cocoa Powder</li>
-                    <li>Fresh Heavy Cream</li>
-                    <li>Cane Sugar</li>
-                </ul>
+        <!-- Detailed Product Sections -->
+        <section id="cake" class="product-section">
+            <div class="product-layout">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Decadent Chocolate Cake Slice">
+                </div>
+                <div class="product-details">
+                    <h2>Decadent Chocolate Cake</h2>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">(127 reviews)</span>
+                    </div>
+                    <p class="product-description">
+                        Our signature chocolate masterpiece features three layers of moist chocolate sponge, infused with premium Belgian cocoa and filled with rich chocolate ganache. Finished with our signature chocolate buttercream and decorated with chocolate shavings.
+                    </p>
+                    <div class="product-info">
+                        <div class="info-item">
+                            <strong>Size Options:</strong>
+                            <span>6" (serves 4-6) • 8" (serves 8-10) • 10" (serves 12-15)</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Allergens:</strong>
+                            <span>Contains gluten, eggs, dairy</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Storage:</strong>
+                            <span>Refrigerate for up to 5 days</span>
+                        </div>
+                    </div>
+                    <div class="ingredients-section">
+                        <h3>Premium Ingredients</h3>
+                        <div class="ingredients-grid">
+                            <span class="ingredient">Belgian Dark Chocolate</span>
+                            <span class="ingredient">Farm-Fresh Eggs</span>
+                            <span class="ingredient">Madagascar Vanilla</span>
+                            <span class="ingredient">Organic Flour</span>
+                            <span class="ingredient">European Butter</span>
+                            <span class="ingredient">Dutch Cocoa Powder</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="gulab-jamun" class="dessert-section">
-            <h2 class="section-title">Traditional Gulab Jamun</h2>
-            <img src="https://imgs.search.brave.com/897paOcsbu6yW35PxDmqYZyYDcwpr6z1biGw0nnHrL0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDY4/Mjc2ODMwL3Bob3Rv/L2d1bGFiLWphbXVu/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1kOGhvV1pjUUlv/Ui1kd1A0VVhfY1g3/N1BLZUExU3FCUk9J/cFFrd3Vhd1dZPQ" alt="Golden Gulab Jamun in Syrup" class="section-image">
-            <p class="description">
-                Experience the authentic taste of India with our traditional Gulab Jamun. These golden, spongy balls are made from the finest milk solids, fried to perfection, and soaked in aromatic cardamom-rose syrup. A timeless dessert that brings warmth and sweetness to every celebration.
-            </p>
-            <div class="ingredients">
-                <h3>Authentic Ingredients</h3>
-                <ul class="ingredients-list">
-                    <li>Fresh Khoya (Milk Solids)</li>
-                    <li>Pure Ghee</li>
-                    <li>Cardamom Powder</li>
-                    <li>Rose Water</li>
-                    <li>Sugar Syrup</li>
-                    <li>All-Purpose Flour</li>
-                    <li>Baking Powder</li>
-                    <li>Chopped Pistachios</li>
-                </ul>
+        <section id="gulab-jamun" class="product-section">
+            <div class="product-layout">
+                <div class="product-image">
+                    <img src="https://imgs.search.brave.com/897paOcsbu6yW35PxDmqYZyYDcwpr6z1biGw0nnHrL0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDY4/Mjc2ODMwL3Bob3Rv/L2d1bGFiLWphbXVu/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1kOGhvV1pjUUlv/Ui1kd1A0VVhfY1g3/N1BLZUExU3FCUk9J/cFFrd3Vhd1dZPQ" alt="Golden Gulab Jamun">
+                </div>
+                <div class="product-details">
+                    <h2>Traditional Gulab Jamun</h2>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">(89 reviews)</span>
+                    </div>
+                    <p class="product-description">
+                        Authentic Indian sweet made from fresh khoya (milk solids), gently fried to golden perfection and soaked in our aromatic cardamom-rose syrup. Each bite delivers the perfect balance of sweetness and traditional flavors.
+                    </p>
+                    <div class="product-info">
+                        <div class="info-item">
+                            <strong>Package:</strong>
+                            <span>12 pieces in decorative box</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Shelf Life:</strong>
+                            <span>Best consumed within 3 days</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Serving:</strong>
+                            <span>Serve at room temperature or slightly warm</span>
+                        </div>
+                    </div>
+                    <div class="ingredients-section">
+                        <h3>Authentic Ingredients</h3>
+                        <div class="ingredients-grid">
+                            <span class="ingredient">Fresh Khoya</span>
+                            <span class="ingredient">Pure Ghee</span>
+                            <span class="ingredient">Green Cardamom</span>
+                            <span class="ingredient">Rose Water</span>
+                            <span class="ingredient">Raw Sugar</span>
+                            <span class="ingredient">Chopped Pistachios</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="ice-cream" class="dessert-section">
-            <h2 class="section-title">Artisan Ice Cream</h2>
-            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Scoops of Colorful Ice Cream" class="section-image">
-            <p class="description">
-                Cool down with our handcrafted artisan ice cream, made with the finest ingredients and churned to creamy perfection. Available in classic vanilla, rich chocolate, and seasonal fruit flavors. Each scoop is a frozen symphony of flavor that will transport you to dessert paradise.
-            </p>
-            <div class="ingredients">
-                <h3>Natural Ingredients</h3>
-                <ul class="ingredients-list">
-                    <li>Organic Heavy Cream</li>
-                    <li>Fresh Whole Milk</li>
-                    <li>Free-Range Egg Yolks</li>
-                    <li>Madagascar Vanilla</li>
-                    <li>Raw Honey</li>
-                    <li>Fresh Seasonal Fruits</li>
-                    <li>Premium Chocolate</li>
-                    <li>Natural Stabilizers</li>
-                </ul>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-header">
+                <h2>About Sweet Haven</h2>
+                <p>Three generations of baking excellence</p>
             </div>
-
+            <div class="about-content">
+                <div class="about-story">
+                    <p>Founded in 1995 by master baker Maria Santos, Sweet Haven has been serving the community with authentic, handcrafted desserts for over 25 years. Our commitment to quality ingredients, traditional techniques, and innovative flavors has made us a beloved local institution.</p>
+                    <p>Today, Maria's daughter Sofia continues the family tradition, blending time-honored recipes with modern presentation to create desserts that delight both the eye and palate.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature">
+                        <h4>Fresh Daily</h4>
+                        <p>All our products are made fresh every morning using traditional techniques.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Premium Ingredients</h4>
+                        <p>We source only the finest ingredients from trusted suppliers worldwide.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Custom Orders</h4>
+                        <p>Special occasion cakes and desserts made to your specifications.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="kalakhand" class="dessert-section">
-            <h2 class="section-title">Heavenly KalaKhand</h2>
-            <img src="https://imgs.search.brave.com/zXg5SxeAdzckQ2Lm8XLg5fdNTJfRVOnn2GyM1jcP7qE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kYWR1/cy5jby5pbi9jZG4v/c2hvcC9maWxlcy81/XzAwYTU1MmY4LWYy/MzItNDJjYS1hMDJj/LTRiMDVhNTBjMDEy/Yi5wbmc_dj0xNzQy/MzExMTk5JndpZHRo/PTEyMDA" class="section-image">
-            <p class="description">
-                Delight in our exquisite KalaKhand - soft, spongy cottage cheese dumplings floating in rich, cardamom-scented milk. This royal Bengali dessert is garnished with crushed pistachios and almonds, creating a luxurious treat that's both elegant and irresistibly delicious.
-            </p>
-            <div class="ingredients">
-                <h3>Royal Ingredients</h3>
-                <ul class="ingredients-list">
-                    <li>Fresh Paneer (Cottage Cheese)</li>
-                    <li>Full-Fat Milk</li>
-                    <li>Green Cardamom</li>
-                    <li>Saffron Strands</li>
-                    <li>Condensed Milk</li>
-                    <li>Crushed Pistachios</li>
-                    <li>Sliced Almonds</li>
-                    <li>Sugar</li>
-                </ul>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="section-header">
+                <h2>Visit Our Bakery</h2>
+                <p>Experience the aroma and taste the difference</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Location</h4>
+                    <p>123 Baker Street<br>Downtown District<br>City, ST 12345</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Hours</h4>
+                    <p>Monday - Saturday: 7:00 AM - 8:00 PM<br>Sunday: 8:00 AM - 6:00 PM</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Contact</h4>
+                    <p>Phone: (555) 123-CAKE<br>Email: hello@sweethaven.com</p>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>Pick Your Dessert - Where Sweet Dreams Come True </p>
-            <p>Made with love and the finest ingredients</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Sweet Haven Bakery</h3>
+                    <p>Handcrafted desserts made with love since 1995</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#specialties">Our Specialties</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li>Custom Cakes</li>
+                            <li>Wedding Desserts</li>
+                            <li>Corporate Catering</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sweet Haven Bakery. All rights reserved. | Made with ❤️ for dessert lovers</p>
+            </div>
         </div>
     </footer>
-
-    <script>
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            element.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-
-        // For interactive sparkle effect on hover
-        document.querySelectorAll('.dessert-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.background = 'linear-gradient(135deg, #ffffff, #f8f9fa)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.background = 'white';
-            });
-        });
-    </script>
 </body>
 </html>
