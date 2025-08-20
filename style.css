@@ -324,23 +324,25 @@ h1, h2, h3, h4 {
     padding: 10px 15px;
     border-radius: 25px;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #8B4513;
-    border: 1px solid #e8ddd4;
     font-weight: 500;
+    border: 1px solid #e8ddd4;
 }
 
 /* About Section */
 .about-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #f8f4f0, #f0ebe5);
+    background: linear-gradient(135deg, #f9f7f4, #f5f1eb);
+    border-radius: 20px;
+    margin: 80px 0;
 }
 
 .about-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 60px;
-    align-items: start;
+    margin-top: 40px;
 }
 
 .about-story p {
@@ -366,7 +368,7 @@ h1, h2, h3, h4 {
 .feature h4 {
     color: #8B4513;
     font-size: 1.2rem;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .feature p {
@@ -378,13 +380,20 @@ h1, h2, h3, h4 {
 /* Contact Section */
 .contact-section {
     padding: 80px 0;
-    background: white;
 }
 
 .contact-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-item {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
 
@@ -399,94 +408,169 @@ h1, h2, h3, h4 {
     line-height: 1.6;
 }
 
-/* Footer */
+/* Enhanced Footer Styles */
 .footer {
-    background: #2c2c2c;
+    background: linear-gradient(135deg, #2c1810, #3d2317, #1a0f0a);
     color: white;
     padding: 60px 0 20px;
+    margin-top: 100px;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
     margin-bottom: 40px;
 }
 
-.footer-brand h3 {
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h3 {
     color: #D2B48C;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.footer-brand p {
-    color: #ccc;
-    font-style: italic;
-}
-
-.footer-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
 }
 
 .footer-column h4 {
     color: #D2B48C;
-    margin-bottom: 15px;
     font-size: 1.1rem;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    font-weight: 600;
 }
 
-.footer-column ul {
+.footer-column:first-child h4 {
+    margin-top: 25px;
+}
+
+.footer-brand p {
+    color: #b8a082;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-links {
     list-style: none;
 }
 
-.footer-column ul li {
+.footer-links li {
     margin-bottom: 8px;
 }
 
-.footer-column ul li a {
-    color: #ccc;
+.footer-links a {
+    color: #b8a082;
     text-decoration: none;
-    transition: color 0.3s ease;
     font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
 
-.footer-column ul li a:hover {
+.footer-links a:hover {
     color: #D2B48C;
 }
 
-.footer-column ul li:not(:has(a)) {
-    color: #ccc;
+.footer-links li:not(:has(a)) {
+    color: #b8a082;
     font-size: 0.9rem;
 }
 
+.location-info p, .hours-info p, .contact-info p {
+    color: #b8a082;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.social-link {
+    color: #b8a082;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #D2B48C;
+}
+
+.newsletter {
+    margin-top: 10px;
+}
+
+.newsletter p {
+    color: #b8a082;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-input {
+    padding: 10px;
+    border: 1px solid #4a3429;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.9rem;
+}
+
+.newsletter-input::placeholder {
+    color: #b8a082;
+}
+
+.newsletter-btn {
+    padding: 10px 15px;
+    background: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background: #A0522D;
+}
+
 .footer-bottom {
-    border-top: 1px solid #444;
+    border-top: 1px solid #4a3429;
     padding-top: 20px;
     text-align: center;
 }
 
 .footer-bottom p {
-    color: #999;
-    font-size: 0.9rem;
+    color: #b8a082;
+    font-size: 0.85rem;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .product-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
 @media (max-width: 768px) {
-    .navbar .container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .nav-menu {
-        gap: 20px;
-    }
-    
-    .hero {
-        height: 60vh;
-        margin-top: 120px;
-    }
-    
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -496,12 +580,7 @@ h1, h2, h3, h4 {
     }
     
     .hero-badges {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .section-header h2 {
-        font-size: 2.2rem;
+        gap: 10px;
     }
     
     .dessert-grid {
@@ -513,12 +592,45 @@ h1, h2, h3, h4 {
         padding: 40px 20px;
     }
     
-    .product-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
     .about-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .product-section {
+        padding: 30px 15px;
+    }
+}
